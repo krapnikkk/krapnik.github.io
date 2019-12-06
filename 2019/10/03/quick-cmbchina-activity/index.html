@@ -16,10 +16,18 @@
 <meta property="og:site_name" content="Krapnik">
 <meta property="og:description" content="前段时间公司旅游去了一趟马来西亚，发现掌上生活有个【非常全球 刷新世界】，境外刷卡先刷后返现活动，回血新技能~ 但是！这个活动名额很少！每天就350个名额，而且秒无。可以想象这大概也是个境外灰产套现好路子~身为程序猿接受挑战！">
 <meta property="og:locale" content="CH">
-<meta property="og:updated_time" content="2019-10-03T15:27:15.625Z">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/WebViewDebugHook.jpg?raw=true">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/00_btn_receivePrize.png?raw=true">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/01_receivePrize.png?raw=true">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/02_post4Data.png?raw=true">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/03_executeProtocol.png?raw=true">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/04_href.png?raw=true">
+<meta property="og:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/05_code.png?raw=true">
+<meta property="og:updated_time" content="2019-12-06T14:36:48.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快人一步，招商掌上生活活动篇">
 <meta name="twitter:description" content="前段时间公司旅游去了一趟马来西亚，发现掌上生活有个【非常全球 刷新世界】，境外刷卡先刷后返现活动，回血新技能~ 但是！这个活动名额很少！每天就350个名额，而且秒无。可以想象这大概也是个境外灰产套现好路子~身为程序猿接受挑战！">
+<meta name="twitter:image" content="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/WebViewDebugHook.jpg?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
   
@@ -184,19 +192,23 @@
         <p>前段时间公司旅游去了一趟马来西亚，发现掌上生活有个<a href="https://market.cmbchina.com/ccard/wap/201909fcqqapp/index.html" target="_blank" rel="noopener">【非常全球 刷新世界】</a>，境外刷卡先刷后返现活动，回血新技能~</p>
 <p>但是！这个活动名额很少！每天就350个名额，而且秒无。可以想象这大概也是个境外灰产套现好路子~<br>身为程序猿接受挑战！</p>
 <a id="more"></a>
-<h2 id="让APP变得可以调试网页"><a href="#让APP变得可以调试网页" class="headerlink" title="让APP变得可以调试网页"></a>让APP变得可以调试网页</h2><h3 id="工具一览：windows-小米note2-magisk-xposed-chrome"><a href="#工具一览：windows-小米note2-magisk-xposed-chrome" class="headerlink" title="工具一览：windows + 小米note2 + magisk + xposed + chrome"></a>工具一览：windows + 小米note2 + magisk + xposed + chrome</h3><p>明眼一看就知道这是个网页，但是要怎么调试这个网页呢，浏览器打开活动页，直接跳转到cmblife:协议开头的路径，app上的表现就是一个授权登录的过程，那我们用chorme浏览器inspect查看网页源码（需要梯子），发现webview关闭了debug，幸好我还是个酷安搞基达人，知道Xposed有个WebViewDebugHook模块，说干就干，掏出备用机小米note2折腾了一下装了个magisk，安装了xposed框架，再装了个WebViewDebugHook模块，搞定~<br>[img]<br>具体可参考这篇文章：<br><a href="https://www.cnblogs.com/wmhuang/p/7396150.html" target="_blank" rel="noopener">https://www.cnblogs.com/wmhuang/p/7396150.html</a></p>
+<h2 id="让APP变得可以调试网页"><a href="#让APP变得可以调试网页" class="headerlink" title="让APP变得可以调试网页"></a>让APP变得可以调试网页</h2><h3 id="工具一览：windows-小米note2-magisk-xposed-chrome"><a href="#工具一览：windows-小米note2-magisk-xposed-chrome" class="headerlink" title="工具一览：windows + 小米note2 + magisk + xposed + chrome"></a>工具一览：windows + 小米note2 + magisk + xposed + chrome</h3><p>明眼一看就知道这是个网页，但是要怎么调试这个网页呢，浏览器打开活动页，直接跳转到cmblife:协议开头的路径，app上的表现就是一个授权登录的过程，那我们用chorme浏览器inspect查看网页源码（需要梯子），发现webview关闭了debug，幸好我还是个酷安搞基达人，知道Xposed有个WebViewDebugHook模块，说干就干，掏出备用机小米note2折腾了一下装了个magisk，安装了xposed框架，再装了个WebViewDebugHook模块，搞定~<br><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/WebViewDebugHook.jpg?raw=true" alt="img"><br>具体可参考这篇文章：<br><a href="https://www.cnblogs.com/wmhuang/p/7396150.html" target="_blank" rel="noopener">https://www.cnblogs.com/wmhuang/p/7396150.html</a></p>
 <h2 id="调试网页"><a href="#调试网页" class="headerlink" title="调试网页"></a>调试网页</h2><p>活动未开始前，【立即抢】按钮是无法点击的，这个简单，我们通过调试【立即抢】按钮的dom发现这个方法</p>
-<p><code>seckillHome.receivePrize(good.goodsId， campaign.campaignNo， campaign.title)</code></p>
-<p>[img]<br>全局搜索找到receivePrize方法，通过阅读代码，我们发现 vm.isBtnActive 这个方法影响了AXIO【aixos喵喵喵？】请求调用，这里断一下点，手机点击一下【立即抢】按钮，跑进断点里面，手动改一下vm.isBtnActive方法</p>
-<p><code>vm.isBtnActive = function(){return true;}</code><br>[img]<br>然后代码就跑进了正常开始领取环节,手机弹窗提示活动木有开始，按钮也变成可以点击状态，而且木有发现任何http请求，王德发，多半是iframe载入了。。。</p>
-<p>继续往下阅读代码发现了提交数据的 AXIO.post4Data 方法，在这个方法调用的时候断点，点击一下【立即抢】按钮进入断点，调试输入这个方法，看看这个方法是从哪里声明的（鼠标点击调试控制台的函数详情即可跳转到对应的声明出处）~<br>[img]<br>找到AXIO模块和post4Data方法，最后发现提交的参数通过一连串的包装后，通过 UTIL.executeProtocol(href) 方法发送请求，UTIL.executeProtocol方法通过上面同样调试输入的方法，发现是一个简单的插入iframe再自动移除的方法<br>[img]</p>
+<p><code>seckillHome.receivePrize(good.goodsId， campaign.campaignNo， campaign.title)</code><br><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/00_btn_receivePrize.png?raw=true" alt="img"></p>
+<p>全局搜索找到receivePrize方法，通过阅读代码，我们发现 vm.isBtnActive 这个方法影响了AXIO【aixos喵喵喵？】请求调用，这里断一下点，手机点击一下【立即抢】按钮，跑进断点里面，手动改一下vm.isBtnActive方法</p>
+<p><code>vm.isBtnActive = function(){return true;}</code></p>
+<p><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/01_receivePrize.png?raw=true" alt="img"></p>
+<p>然后代码就跑进了正常开始领取环节,手机弹窗提示活动木有开始，按钮也变成可以点击状态，而且木有发现任何http请求，王德发，多半是iframe载入了。。。</p>
+<p>继续往下阅读代码发现了提交数据的 AXIO.post4Data 方法，在这个方法调用的时候断点，点击一下【立即抢】按钮进入断点，调试输入这个方法，看看这个方法是从哪里声明的（鼠标点击调试控制台的函数详情即可跳转到对应的声明出处）~<br><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/02_post4Data.png?raw=true" alt="img"></p>
+<p>找到AXIO模块和post4Data方法，最后发现提交的参数通过一连串的包装后，通过 UTIL.executeProtocol(href) 方法发送请求，UTIL.executeProtocol方法通过上面同样调试输入的方法，发现是一个简单的插入iframe再自动移除的方法<br><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/03_executeProtocol.png?raw=true" alt="img"></p>
 <p>然后瞄瞄href这个参数是什么东西，encodeURIComponent解码一下</p>
 <p><code>cmblife://web/post/cpSeckill/seckill.json?callback=javascript:receivePrizeCallback&amp;params={&quot;cgName&quot;:&quot;fcqq201909&quot;,&quot;campaignNo&quot;:&quot;48ac7fcc000c466cac2720d201e0af94&quot;,&quot;goodsId&quot;:&quot;47916&quot;,&quot;confirmCheck&quot;:&quot;1&quot;}&amp;timeout=10</code></p>
-<p>手动调用一下，发现报错了，提示receivePrizeCallback这个方法未定义，到这里可以知道iframe载入的是一种类似jsonp的机制，callback就是请求回来iframe里面的方法，手动写一下这个方法<br>[img]<br><code>function receivePrizeCallback(data){
+<p>手动调用一下，发现报错了，提示receivePrizeCallback这个方法未定义，到这里可以知道iframe载入的是一种类似jsonp的机制，callback就是请求回来iframe里面的方法，手动写一下这个方法<br><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/04_href.png?raw=true" alt="img"><br><code>function receivePrizeCallback(data){
     var res = decodeURIComponent(data);
     console.log(res);
 }</code></p>
-<p>ojbk<del>我们这样子就可以快人一步，在活动还没有开始的时候提交请求了</del><br>[img]</p>
+<p>ojbk<del>我们这样子就可以快人一步，在活动还没有开始的时候提交请求了</del></p>
+<p><img src="https://github.com/krapnikkk/krapnikkk.github.io/blob/master/asset/quick-cmbchina-activity/05_code.png?raw=true" alt="img"></p>
 <p>具体代码如下：</p>
 <p>`function executeProtocol(){<br>    var iframe = document.createElement(“iframe”);<br>    iframe.style.cssText = “display:none;width:0px;height:0px;”,<br>    iframe.src = “cmblife://web/post/cpSeckill/seckill.json?callback=javascript%3AreceivePrizeCallback&amp;params=%7B%22cgName%22%3A%22zhoumobanjia20191001%22%2C%22campaignNo%22%3A%2286fcd88e53214822b494fd90867db853%22%2C%22goodsId%22%3A%2249657%22%2C%22confirmCheck%22%3A%221%22%7D&amp;timeout=10”,<br>    (document.body || document.documentElement).appendChild(iframe),<br>    setTimeout(function() {<br>        iframe &amp;&amp; iframe.parentNode &amp;&amp; iframe.parentNode.removeChild(iframe)<br>    }, 0)<br>}</p>
 <p>function receivePrizeCallback(data){<br>    var res = decodeURIComponent(data);<br>    console.log(res);<br>}`</p>
@@ -204,27 +216,6 @@
 
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
