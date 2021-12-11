@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://krapnikkk.github.io">
-  <title>Archives: 2019/10 | Krapnik</title>
+  <title>create-a-WebGLProgram | Krapnik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="🐢 Coooooooooooooooding~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Krapnik">
-<meta property="og:url" content="http://krapnikkk.github.io/archives/2019/10/index.html">
+  <meta name="description" content="【创建一个WebGL程序】从canvas画布说起图解 获取一个canvas画布[DOM元素对象] 通过浏览器原生API接口document.querySelector(selectors)获取到canvas画布 通过浏览器原生API接口document.createElement(‘canvas’)创建一个canvas画布 [父级DOM元素对象使用insertBefore将创建出来的canvas画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="create-a-WebGLProgram">
+<meta property="og:url" content="http://krapnikkk.github.io/2021/12/11/create-a-WebGLProgram/index.html">
 <meta property="og:site_name" content="Krapnik">
-<meta property="og:description" content="🐢 Coooooooooooooooding~">
+<meta property="og:description" content="【创建一个WebGL程序】从canvas画布说起图解 获取一个canvas画布[DOM元素对象] 通过浏览器原生API接口document.querySelector(selectors)获取到canvas画布 通过浏览器原生API接口document.createElement(‘canvas’)创建一个canvas画布 [父级DOM元素对象使用insertBefore将创建出来的canvas画">
 <meta property="og:locale" content="CH">
+<meta property="og:image" content="http://krapnikkk.github.io/2021/12/11/create-a-WebGLProgram/asset/create-a-WebGLProgram/0-workflow.png">
+<meta property="og:updated_time" content="2021-12-11T08:06:29.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Krapnik">
-<meta name="twitter:description" content="🐢 Coooooooooooooooding~">
+<meta name="twitter:title" content="create-a-WebGLProgram">
+<meta name="twitter:description" content="【创建一个WebGL程序】从canvas画布说起图解 获取一个canvas画布[DOM元素对象] 通过浏览器原生API接口document.querySelector(selectors)获取到canvas画布 通过浏览器原生API接口document.createElement(‘canvas’)创建一个canvas画布 [父级DOM元素对象使用insertBefore将创建出来的canvas画">
+<meta name="twitter:image" content="http://krapnikkk.github.io/2021/12/11/create-a-WebGLProgram/asset/create-a-WebGLProgram/0-workflow.png">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
   
@@ -149,64 +152,277 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-create-a-WebGLProgram" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/quick-cmbchina-activity/" class="archive-article-date">
-  	<time datetime="2019-10-03T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/quick-cmbchina-activity/">快人一步，招商掌上生活活动篇</a>
+    <h1 class="article-title" itemprop="name">
+      create-a-WebGLProgram
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快人一步</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">兴趣使然</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        
+        <a href="/2021/12/11/create-a-WebGLProgram/" class="archive-article-date">
+  	<time datetime="2021-12-11T08:06:29.115Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="【创建一个WebGL程序】从canvas画布说起"><a href="#【创建一个WebGL程序】从canvas画布说起" class="headerlink" title="【创建一个WebGL程序】从canvas画布说起"></a>【创建一个WebGL程序】从canvas画布说起</h1><h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="./asset/create-a-WebGLProgram/0-workflow.png" alt="0_workflow"></p>
+<h2 id="获取一个canvas画布-DOM元素对象"><a href="#获取一个canvas画布-DOM元素对象" class="headerlink" title="获取一个canvas画布[DOM元素对象]"></a>获取一个canvas画布[DOM元素对象]</h2><ol>
+<li>通过浏览器原生API接口document.querySelector(selectors)获取到canvas画布</li>
+<li>通过浏览器原生API接口document.createElement(‘canvas’)创建一个canvas画布 [父级DOM元素对象使用insertBefore将创建出来的canvas画布添加到DOM中]</li>
+</ol>
+<h2 id="从canvas元素对象获取绘制的上下文-WebGLRenderingContext"><a href="#从canvas元素对象获取绘制的上下文-WebGLRenderingContext" class="headerlink" title="从canvas元素对象获取绘制的上下文[WebGLRenderingContext]"></a>从canvas元素对象获取绘制的上下文[WebGLRenderingContext]</h2><ul>
+<li>使用canvas元素对象接口getContext(contextType, contextAttributes)获取渲染绘制上下文[context]</li>
+<li>contextType(string)【上下文类型】：<ol>
+<li>“webgl” (或”experimental-webgl”) 这将创建一个 WebGLRenderingContext 三维渲染上下文对象。只在实现WebGL 版本1(OpenGL ES 2.0)的浏览器上可用。</li>
+<li>“webgl2” (或 “experimental-webgl2”) 这将创建一个 WebGL2RenderingContext 三维渲染上下文对象。只在实现 WebGL 版本2 (OpenGL ES 3.0)的浏览器上可用。[截止2020/08/30 safari尚未支持]</li>
+</ol>
+</li>
+<li>contextAttributes(Object||null) 【WebGL上下文属性】：<ol>
+<li>alpha(boolean): 表明canvas是否包含一个alpha缓冲区。</li>
+<li>antialias(boolean): 表明是否开启抗锯齿。</li>
+<li>depth(boolean): 表明绘制缓冲区是否包含一个深度至少为16位的缓冲区。</li>
+<li>failIfMajorPerformanceCaveat(boolean): 表明在一个系统性能低的环境是否创建该上下文的。</li>
+<li>powerPreference(string): 指示浏览器在运行WebGL上下文时使用相应的GPU电源配置。 可能值如下:<ul>
+<li>“default”:自动选择，默认值。</li>
+<li>“high-performance”: 高性能模式。</li>
+<li>“low-power”: 节能模式。</li>
+</ul>
+</li>
+<li>premultipliedAlpha(boolean): 表明排版引擎讲假设绘制缓冲区是否包含预混合alpha通道的。</li>
+<li>stencil(boolean): 表明绘制缓冲区是否包含一个深度至少为8位的模版缓冲区。</li>
+</ol>
+</li>
+</ul>
+<h2 id="创建WebGL程序对象-WebGLProgram"><a href="#创建WebGL程序对象-WebGLProgram" class="headerlink" title="创建WebGL程序对象[WebGLProgram]"></a>创建WebGL程序对象[WebGLProgram]</h2><ol>
+<li>使用渲染绘制上下文接口createProgram()初始化一个WebGL程序对象</li>
+<li>一个WebGL程序由两个编译过后的顶点着色器对象组成[顶点着色器和片段着色器（均由 GLSL 语言所写）]</li>
+</ol>
+<h2 id="创建着色器程序对象-WebGLShader"><a href="#创建着色器程序对象-WebGLShader" class="headerlink" title="创建着色器程序对象[WebGLShader]"></a>创建着色器程序对象[WebGLShader]</h2><ol>
+<li>使用渲染绘制上下文接口createShader(type)初始化一个着色器对象<ul>
+<li>type(string)【着色器类型】：<ol>
+<li>gl.VERTEX_SHADER 【顶点着色器】</li>
+<li>gl.FRAGMENT_SHADER【片元着色器】</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="向着色器对象中填充着色器程序的GLSL-ES源代码"><a href="#向着色器对象中填充着色器程序的GLSL-ES源代码" class="headerlink" title="向着色器对象中填充着色器程序的GLSL ES源代码"></a>向着色器对象中填充着色器程序的GLSL ES源代码</h2><ol>
+<li>使用渲染绘制上下文接口shaderSource(shader, source)向着色器对象指定GLSL ES源代码<ul>
+<li>shader(WebGLShader)【用于设置程序代码的 WebGLShader 对象】</li>
+<li>source(string)【包含GLSL ES程序代码的字符串】</li>
+</ul>
+</li>
+</ol>
+<h2 id="编译着色器"><a href="#编译着色器" class="headerlink" title="编译着色器"></a>编译着色器</h2><ol>
+<li>使用渲染绘制上下文接口compileShader(shader)进行编译。<ul>
+<li>shader(WebGLShader)【片元或顶点着色器】</li>
+</ul>
+</li>
+<li>编译成WebGL程序使用的二进制可执行格式</li>
+</ol>
+<h3 id="检测着色器的状态"><a href="#检测着色器的状态" class="headerlink" title="检测着色器的状态"></a>检测着色器的状态</h3><ol>
+<li>使用渲染绘制上下文接口getShaderParameter(shader,pname)检查着色器的状态<ul>
+<li>shader(WebGLShader)【指定待获取参数的着色器】</li>
+<li>pname(string)【根据pname的不同，返回不同的值】<ol>
+<li>gl.DELETE_STATUS:标示着色器是否被删除，返回删除（GL_TRUE）或未删除（GL_FALSE）</li>
+<li>gl.COMPILE_STATUS: 标示着色器是否编译成功，返回是（GL_TRUE）或不是（GL_FALSE）</li>
+<li>gl.SHADER_TYPE: 标示着色器类型，返回顶点着色器(gl.VERTEX_SHADER)或片段着色器(gl.FRAGMENT_SHADER)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>如果编译失败，getShaderParameter接口会返回false,WebGL系统会将编译的具体内容写入着色器的信息日志</li>
+<li>使用渲染绘制上下文接口getShaderInfoLog(shader)获取着色器的信息日志<ul>
+<li>shader(WebGLShader)【待获取信息日志的着色器】</li>
+</ul>
+</li>
+</ol>
+<h3 id="删除着色器"><a href="#删除着色器" class="headerlink" title="删除着色器"></a>删除着色器</h3><pre><code>1. 使用渲染绘制上下文接口deleteShader(shader)删除着色器对象
+- shader(WebGLShader)【待删除的着色器对象】
+2. 如果着色器对象还在使用，着色器不会马上被删除，而是等到程序对象不再使用该着色器后，才将其销毁</code></pre><h2 id="为WebGL程序对象分配着色器对象"><a href="#为WebGL程序对象分配着色器对象" class="headerlink" title="为WebGL程序对象分配着色器对象"></a>为WebGL程序对象分配着色器对象</h2><ol>
+<li>使用渲染绘制上下文接口attachShader(program,shader)往WebGL程序对象添加一个片段或者顶点着色器对象。<ul>
+<li>program(WebGLProgram)【被添加着色器的WebGL程序对象】</li>
+<li>shader(WebGLShader)【被添加到WebGL程序对象的着色器对象】</li>
+</ul>
+</li>
+<li>着色器被赋给WebGL程序对象前，并不一定要为其制定代码或进行编译。把空的着色器对象赋给WebGL程序对象也是可以的。</li>
+<li>使用渲染绘制上下文接口detachShader(program,shader)取消着色器对象对WebGL程序对象的分配<ul>
+<li>program(WebGLProgram)【被添加着色器的WebGL程序对象】</li>
+<li>shader(WebGLShader)【被添加到WebGL程序对象的着色器对象】</li>
+</ul>
+</li>
+</ol>
+<h2 id="将顶点着色器和片元着色器连接"><a href="#将顶点着色器和片元着色器连接" class="headerlink" title="将顶点着色器和片元着色器连接"></a>将顶点着色器和片元着色器连接</h2><ol>
+<li><p>使用渲染绘制上下文接口linkProgram()将顶点着色器和片元着色器连接起来。</p>
+</li>
+<li><p>程序对象进行着色器连接操作，需要保证以下要求</p>
+<ul>
+<li>顶点着色器和片元着色器的varying变量同名同类型，且一一对应</li>
+<li>顶点着色器对每个varying变量已经赋值</li>
+<li>顶点着色器和片元着色器中的同名uniform变量也是同类型的</li>
+<li>着色器中的attribute变量、uniform变量和varying变量的个数没有超过着色器的上限</li>
+</ul>
+</li>
+<li><p>在着色器连接后，应当检查连接是否成功。</p>
+<h3 id="检测着色器连接状态"><a href="#检测着色器连接状态" class="headerlink" title="检测着色器连接状态"></a>检测着色器连接状态</h3><ol>
+<li>使用渲染绘制上下文接口getProgramParameter(program,pname)获取WebGLProgram的信息，用来检查着色器的连接状态<ul>
+<li>program(WebGLProgram)【指定待获取连接状态的WebGL程序对象】</li>
+<li>pname(string)【根据pname的不同，返回不同的值】</li>
+</ul>
+<ol>
+<li>gl.DELETE_STATUS:标示程序是否已经被删除，返回删除（true）或未删除（GL_FALSE）</li>
+<li>gl.LINK_STATUS: 标示程序是否连接成功，返回是（GL_TRUE）或不是（GL_FALSE）</li>
+<li>gl.VALIDATE_STATIS: 程序是否已经成功连接，返回是（GL_TRUE）或不是（GL_FALSE）</li>
+<li>gl.ATTACHED_SHADERS:已被分配给程序的着色器数量</li>
+<li>gl.ACTIVE_ATTRIBUTES:顶点着色器中attribute变量的数量</li>
+<li>gl.ACTIVE_UNIFORM_ATTRIBUTES:程序中uniform变量的数量<ol start="2">
+<li>使用渲染绘制上下文接口getProgramInfoLog(program)获取连接错误信息</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>program(WebGLProgram)【WebGL程序对象】</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="告知WebGL系统所使用的程序对象"><a href="#告知WebGL系统所使用的程序对象" class="headerlink" title="告知WebGL系统所使用的程序对象"></a>告知WebGL系统所使用的程序对象</h2><ol>
+<li>使用渲染绘制上下文接口useProgram()告知WebGL系统绘制时使用指定的WebGL程序对象</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);<span class="comment">//获取一个canvas画布[DOM元素对象]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gl = canvas.getContext(<span class="string">'webgl'</span>);<span class="comment">//从canvas元素对象获取绘制的上下文[context]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> VSHADER_SOURCE = </span><br><span class="line">    <span class="string">"attribute vec4 a_Position;\n"</span> +</span><br><span class="line">    <span class="string">"attribute float a_Position;\n"</span> +</span><br><span class="line">    <span class="string">"void main() &#123;\n"</span> +</span><br><span class="line">    <span class="string">" gl_Position = a_Position;\n"</span> +</span><br><span class="line">    <span class="string">" gl_PointSize = a_PointSize;\n"</span> +</span><br><span class="line">    <span class="string">"&#125;\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> FSHADER_SOURCE = </span><br><span class="line">    <span class="string">"void main()&#123;\n"</span> +</span><br><span class="line">    <span class="string">"   gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);\n"</span>+</span><br><span class="line">    <span class="string">"&#125;\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> loadShader = <span class="function">(<span class="params">gl,type,source</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> shader = gl.createShader(type);<span class="comment">//创建着色器对象</span></span><br><span class="line"></span><br><span class="line">    gl.shaderSource(shader,source);<span class="comment">//填充着色器源码</span></span><br><span class="line"></span><br><span class="line">    gl.compileShader(shader);<span class="comment">//编译着色器</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> compiled = gl.getShaderParameter(shader,gl.COMPILE_STATUS);</span><br><span class="line">    <span class="keyword">if</span>(!compiled)&#123;</span><br><span class="line">        <span class="keyword">let</span> error = gl.getShaderInfoLog(shader);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"Failed to compile shader:"</span>+error);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> shader;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> createProgram = <span class="function">(<span class="params">gl, vshader, fshader</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> vertexShader = loadShader(gl, gl.VERTEX_SHADER, vshader);</span><br><span class="line">    <span class="keyword">let</span> fragmentShader = loadShader(gl, gl.FRAGMENT_SHADER, fshader);</span><br><span class="line">    <span class="keyword">if</span> (!vertexShader || !fragmentShader) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> program = gl.createProgram();<span class="comment">//创建WebGL程序对象</span></span><br><span class="line">    <span class="keyword">if</span> (!program) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 为WebGL程序对象分配着色器对象</span></span><br><span class="line">    gl.attachShader(program, vshader);</span><br><span class="line">    gl.attachShader(program, fshader);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将顶点着色器和片元着色器连接</span></span><br><span class="line">    gl.linkProgram(program);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> linked = gl.getProgramParameter(program, gl.LINK_STATUS);</span><br><span class="line">    <span class="keyword">if</span> (!linked) &#123;</span><br><span class="line">        <span class="keyword">let</span> error = gl.getProgramInfoLog(program);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Failed to link program: '</span> + error);</span><br><span class="line">        gl.deleteProgram(program);</span><br><span class="line">        gl.deleteShader(fragmentShader);</span><br><span class="line">        gl.deleteShader(vertexShader);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> program;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> program = createProgram();</span><br><span class="line">gl.useProgram(program);<span class="comment">//告知WebGL系统所使用的程序对象</span></span><br></pre></td></tr></table></figure>
 
-          
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext" target="_blank" rel="noopener">WebGLRenderingContext - Web API 接口参考 | MDN</a></li>
+<li><a href="https://book.douban.com/subject/25909351/" target="_blank" rel="noopener">WebGL编程指南</a></li>
+</ul>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://krapnikkk.github.io/2021/12/11/create-a-WebGLProgram/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/12/11/how-to-use-js-on-chrome/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">how to use js on chrome</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -229,8 +445,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
