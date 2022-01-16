@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://krapnikkk.github.io">
-  <title>Archives: 2019/10 | Krapnik</title>
+  <title>计算机组成原理笔记 | Krapnik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="🐢 Coooooooooooooooding~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Krapnik">
-<meta property="og:url" content="http://krapnikkk.github.io/archives/2019/10/index.html">
+  <meta name="description" content="计算机组成原理内存单位   单位 进制    比特（bit/binary digit） 存储一个二进制位（状态：0和1）   字节（B/byte） 8比特   兆字节（MB） 1024字节   千兆字节（GB） 1024兆字节   太字节（TB） 1024千兆字节   拍字节（PB） 1024太字节   数据类型内存情况（in C++）   类型 内存（单位：字节）    int（整型） 4">
+<meta name="keywords" content="计算机组成原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理笔记">
+<meta property="og:url" content="http://krapnikkk.github.io/2022/01/16/Computer Working Principle/index.html">
 <meta property="og:site_name" content="Krapnik">
-<meta property="og:description" content="🐢 Coooooooooooooooding~">
+<meta property="og:description" content="计算机组成原理内存单位   单位 进制    比特（bit/binary digit） 存储一个二进制位（状态：0和1）   字节（B/byte） 8比特   兆字节（MB） 1024字节   千兆字节（GB） 1024兆字节   太字节（TB） 1024千兆字节   拍字节（PB） 1024太字节   数据类型内存情况（in C++）   类型 内存（单位：字节）    int（整型） 4">
 <meta property="og:locale" content="CH">
+<meta property="og:updated_time" content="2022-01-16T08:09:56.587Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Krapnik">
-<meta name="twitter:description" content="🐢 Coooooooooooooooding~">
+<meta name="twitter:title" content="计算机组成原理笔记">
+<meta name="twitter:description" content="计算机组成原理内存单位   单位 进制    比特（bit/binary digit） 存储一个二进制位（状态：0和1）   字节（B/byte） 8比特   兆字节（MB） 1024字节   千兆字节（GB） 1024兆字节   太字节（TB） 1024千兆字节   拍字节（PB） 1024太字节   数据类型内存情况（in C++）   类型 内存（单位：字节）    int（整型） 4">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
   
@@ -149,60 +151,351 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Computer Working Principle" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/quick-cmbchina-activity/" class="archive-article-date">
-  	<time datetime="2019-10-03T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/quick-cmbchina-activity/">快人一步，招商掌上生活活动篇</a>
+    <h1 class="article-title" itemprop="name">
+      计算机组成原理笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        
+        <a href="/2022/01/16/Computer Working Principle/" class="archive-article-date">
+  	<time datetime="2022-01-16T07:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="计算机组成原理"><a href="#计算机组成原理" class="headerlink" title="计算机组成原理"></a>计算机组成原理</h3><h3 id="内存单位"><a href="#内存单位" class="headerlink" title="内存单位"></a>内存单位</h3><table>
+<thead>
+<tr>
+<th>单位</th>
+<th>进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>比特（bit/binary digit）</td>
+<td>存储一个二进制位（状态：0和1）</td>
+</tr>
+<tr>
+<td>字节（B/byte）</td>
+<td>8比特</td>
+</tr>
+<tr>
+<td>兆字节（MB）</td>
+<td>1024字节</td>
+</tr>
+<tr>
+<td>千兆字节（GB）</td>
+<td>1024兆字节</td>
+</tr>
+<tr>
+<td>太字节（TB）</td>
+<td>1024千兆字节</td>
+</tr>
+<tr>
+<td>拍字节（PB）</td>
+<td>1024太字节</td>
+</tr>
+</tbody></table>
+<h3 id="数据类型内存情况（in-C-）"><a href="#数据类型内存情况（in-C-）" class="headerlink" title="数据类型内存情况（in C++）"></a>数据类型内存情况（in C++）</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>内存（单位：字节）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int（整型）</td>
+<td>4</td>
+</tr>
+<tr>
+<td>short（短整型）</td>
+<td>2</td>
+</tr>
+<tr>
+<td>long（长整型）</td>
+<td>4（sizeof(long)&gt;=sizeof(int)）</td>
+</tr>
+<tr>
+<td>long long（长长整型）</td>
+<td>8</td>
+</tr>
+<tr>
+<td>float（浮点型）</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double（双浮点型）</td>
+<td>8</td>
+</tr>
+<tr>
+<td>char（字符型）</td>
+<td>1</td>
+</tr>
+<tr>
+<td>bool（布尔型）</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><p> <strong>计算机中的数在内存中都是以二进制形式进行存储的，用位运算就是直接对整数在内存中的二进制位进行操作，因此其执行效率非常高，在程序中尽量使用位运算进行操作，这会大大提高程序的性能。</strong></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>描述</th>
+<th>运算规则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>与</td>
+<td>两个位都是 1 时，结果才为 1，否则为 0</td>
+</tr>
+<tr>
+<td>|</td>
+<td>或</td>
+<td>两个位都是 0 时，结果才为 0，否则为 1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或</td>
+<td>两个位相同则为 0，不同则为 1</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反</td>
+<td>0 则变为 1，1 则变为 0</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+<td>向左进行移位操作，高位丢弃，低位补 0</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+<td>向右进行移位操作，对无符号数，高位补 0，对于有符号数，高位补符号位</td>
+</tr>
+</tbody></table>
+<h4 id="与运算【-amp-】"><a href="#与运算【-amp-】" class="headerlink" title="与运算【&amp;】"></a>与运算【&amp;】</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 两个位都是 1 时，结果才为 1，否则为 0	</span><br><span class="line">	1 0 0 1 1</span><br><span class="line">  &amp; 1 1 0 0 1</span><br><span class="line">  -----------</span><br><span class="line">  	1 0 0 0 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="或运算【-】"><a href="#或运算【-】" class="headerlink" title="或运算【|】"></a>或运算【|】</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 两个位都是 0 时，结果才为 0，否则为 1	</span><br><span class="line">	1 0 0 1 1</span><br><span class="line">  | 1 1 0 0 1</span><br><span class="line">  -----------</span><br><span class="line">  	1 1 0 1 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="异或运算【-】"><a href="#异或运算【-】" class="headerlink" title="异或运算【^】"></a>异或运算【^】</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 两个位相同则为 0，不同则为 1	</span><br><span class="line">	1 0 0 1 1</span><br><span class="line">  ^ 1 1 0 0 1</span><br><span class="line">  -----------</span><br><span class="line">  	0 1 0 1 0</span><br></pre></td></tr></table></figure>
+
+<h4 id="取反运算【-】"><a href="#取反运算【-】" class="headerlink" title="取反运算【~】"></a>取反运算【~】</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 0 则变为 1，1 则变为 0 </span><br><span class="line">  ~ 1 0 0 1 1</span><br><span class="line">  -----------</span><br><span class="line">  	0 1 1 0 0</span><br></pre></td></tr></table></figure>
+
+<h4 id="左移运算【-lt-lt-】"><a href="#左移运算【-lt-lt-】" class="headerlink" title="左移运算【&lt;&lt;】"></a>左移运算【&lt;&lt;】</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 向左进行移位操作，高位丢弃，低位补 0</span><br><span class="line">int a = 8;// int 4字节 1字节=8比特位 共32位</span><br><span class="line">a&lt;&lt;3; // 64</span><br><span class="line">移位前：0000 0000 0000 0000 0000 0000 0000 1000</span><br><span class="line">移位后：0000 0000 0000 0000 0000 0000 0100 0000</span><br></pre></td></tr></table></figure>
+
+<h4 id="右移运算【-gt-gt-】"><a href="#右移运算【-gt-gt-】" class="headerlink" title="右移运算【&gt;&gt;】"></a>右移运算【&gt;&gt;】</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 向右进行移位操作，对无符号数，高位补 0，对于有符号数，高位补符号位</span><br><span class="line"></span><br><span class="line">// 无符号</span><br><span class="line">unsigned int a = 8;</span><br><span class="line">a &gt;&gt; 3; // 1</span><br><span class="line">移位前：0000 0000 0000 0000 0000 0000 0000 1000</span><br><span class="line">移位后：0000 0000 0000 0000 0000 0000 0000 0001</span><br><span class="line"></span><br><span class="line">// 有符号</span><br><span class="line">int a = -8;</span><br><span class="line">a &gt;&gt; 3; // -1</span><br><span class="line">移位前：1111 1111 1111 1111 1111 1111 1111 1000 //-8补码（负数使用补码参加运算）</span><br><span class="line">	   1000 0000 0000 0000 0000 0000 0000 1000 //-8原码</span><br><span class="line">	   1111 1111 1111 1111 1111 1111 1111 0111 //-8反码</span><br><span class="line">移位后：1111 1111 1111 1111 1111 1111 1111 1111 //-1补码</span><br><span class="line">	   1000 0000 0000 0000 0000 0000 0000 0001 //-1原码</span><br><span class="line">	   1111 1111 1111 1111 1111 1111 1111 1110 //-1反码</span><br></pre></td></tr></table></figure>
+
+<h4 id="常见位运算问题"><a href="#常见位运算问题" class="headerlink" title="常见位运算问题"></a>常见位运算问题</h4><ol>
+<li><p><strong>位操作实现乘除法</strong></p>
+<ul>
+<li>数a向右移一位，相当于将a除以2；数a向左移一位，相当于将a乘以2</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 2;</span><br><span class="line">a &gt;&gt; 1;//1</span><br><span class="line">a &lt;&lt; 1;//4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>位操作交换两数</strong></p>
+<ul>
+<li><p>位操作交换两数可以不需要第三个临时变量，虽然普通操作也可以做到，但是没有其效率高</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//普通操作</span><br><span class="line">void swap(int &amp;a, int &amp;b)&#123;</span><br><span class="line">	a = a + b;</span><br><span class="line">	b = a - b;</span><br><span class="line">	a = a - b;</span><br><span class="line">&#125;</span><br><span class="line">//位操作</span><br><span class="line">void swap(int &amp;a, int &amp;b)&#123;</span><br><span class="line">	a ^= b; // a = a ^ b;</span><br><span class="line">	// 相同数【异或运算】结果为0，然后0与另一个数异或运算结果为另一个数</span><br><span class="line">	b ^= a; // b = b ^ a; ---&gt; b = b ^ ( a ^ b ); ---&gt; b = b ^ b ^ a = a; </span><br><span class="line">	a ^= b; // a = a ^ b; ---&gt; a = ( a ^ b ) ^ b; ---&gt; a = a ^ a ^ b = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>位操作判断奇偶数</strong></p>
+<ul>
+<li><p>只要根据数的最后一位是0还是1来决定即可，为0就是偶数，为1就是奇数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(0 == (a &amp; 1))&#123; //两个数【与运算】时，两个位都是1时，结果才是1，否则为0</span><br><span class="line">	//偶数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>位操作交换符号</strong></p>
+<ul>
+<li><p>交换符号将正数变成负数，负数变成正数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int reversal(int a) &#123;</span><br><span class="line">	return ~a + 1; // 【取反运算】将代表最高位表示符号位的符号转换,最高位使用了一个位置，加1补偿</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>位操作求绝对值</strong></p>
+<ul>
+<li><p>整数的绝对值是其本身，负数的绝对值可以对其进行取反加一求得</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int abs(int a)&#123;</span><br><span class="line">	int i = a &gt;&gt; 31;// 正数右移31位得到0【最高位是0】，负数右移31位得到-1【最高位是1，然后补符号位】，求得该符号情况</span><br><span class="line">	return i == 0 ? </span><br><span class="line">	a : // 正数不变</span><br><span class="line">	(~a + 1); //负数交换符号</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//优化方案</span><br><span class="line">int abs(int a)&#123;</span><br><span class="line">	int i = a &gt;&gt; 31;</span><br><span class="line">	return ((a^i)-i); //i = 0(正数),对于任何数与 0 异或都会保持不变，i = -1（负数），负数与-1异或相当于负数取反得正（最高位【异或运算】）并且末位-1，因此-i(即+1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>位操作进行高低位变换</strong></p>
+<ul>
+<li><p>给定一个16位的无符号整数，将其高8位和低8位进行交换，求出交换后的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">34520的二进制表示：</span><br><span class="line">1000 0110 1101 1000</span><br><span class="line">将其高8位与低8位进行交换，得到一个新的二进制数：</span><br><span class="line">1101 1000 1000 0110</span><br><span class="line">其十进制表示55430</span><br><span class="line"></span><br><span class="line">// 分别左右移位后，对空白位0进行【或运算】求得交换结果</span><br><span class="line">unsigned short a = 34520;</span><br><span class="line">a = ( a &gt;&gt; 8 ) | ( a &lt;&lt; 8 );</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>位操作进行二进制逆序</strong></p>
+<ul>
+<li><p>将无符号数的二进制表示进行逆序，求取逆序后的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">34520的二进制表示：</span><br><span class="line">1000 0110 1101 1000</span><br><span class="line">逆序后：</span><br><span class="line">0001 1011 0110 0001</span><br><span class="line">其十进制表示7009</span><br><span class="line"></span><br><span class="line">// todo</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+</li>
+</ol>
+<ol start="8">
+<li><p><strong>位操作统计二进制中1的个数</strong></p>
+<ul>
+<li><p>利用a&amp;=( a -1 )统计二进制中1的个数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">count = 0;</span><br><span class="line">while(a)&#123;</span><br><span class="line">	a = a &amp; (a-1);//非0的最低位【与运算】后归0</span><br><span class="line">	count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure></code></pre><h3 id="二进制的加法运算"><a href="#二进制的加法运算" class="headerlink" title="二进制的加法运算"></a>二进制的加法运算</h3><h4 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h4><p><strong>用最高位表示符号位，其他位存放该数的二进制的绝对值。</strong></p>
+<h4 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h4><p><strong>正数的反码还是等于原码；负数的反码就是它的原码除符号位外，按位取反</strong>。</p>
+<h4 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h4><p><strong>正数的补码等于它的原码；负数的补码等于反码+1。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于补码表示中的符号位可以与数值位一起参加运算，并且可以将减法转换为加法进行运算，简化了运算过程，因此计算机中均采用补码进行加减运算。</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快人一步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计算机组成原理</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://krapnikkk.github.io/2022/01/16/Computer Working Principle/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2022/01/09/lightcaster/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">光照类型[lightcaster]</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,8 +518,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

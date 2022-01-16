@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://krapnikkk.github.io">
-  <title>Archives: 2019/10 | Krapnik</title>
+  <title>光照模型[Lighting Model] | Krapnik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="🐢 Coooooooooooooooding~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Krapnik">
-<meta property="og:url" content="http://krapnikkk.github.io/archives/2019/10/index.html">
+  <meta name="description" content="光照模型  光照模型（illustration model）,也称明暗模型，用于计算物体某点处的光强（颜色值）。从算法理论基础而言，光照模型分为两种：一种是基于物理理论的，另一种是基于经验模型的。  基于物理理论的光照模型： 偏重于使用物理的度量和统计方法，效果非常真实，但是计算复杂，实现起来较困难。   基于实践总结的经验模型： 是对光照的一种模拟，通过实践总结出简化的方法，简化了真实的光照计算">
+<meta name="keywords" content="计算机图形学#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="光照模型[Lighting Model]">
+<meta property="og:url" content="http://krapnikkk.github.io/2021/12/25/lighting-model/index.html">
 <meta property="og:site_name" content="Krapnik">
-<meta property="og:description" content="🐢 Coooooooooooooooding~">
+<meta property="og:description" content="光照模型  光照模型（illustration model）,也称明暗模型，用于计算物体某点处的光强（颜色值）。从算法理论基础而言，光照模型分为两种：一种是基于物理理论的，另一种是基于经验模型的。  基于物理理论的光照模型： 偏重于使用物理的度量和统计方法，效果非常真实，但是计算复杂，实现起来较困难。   基于实践总结的经验模型： 是对光照的一种模拟，通过实践总结出简化的方法，简化了真实的光照计算">
 <meta property="og:locale" content="CH">
+<meta property="og:image" content="http://assets.processon.com/chart_image/61c497d40791290c9e03989d.png">
+<meta property="og:updated_time" content="2021-12-26T13:13:42.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Krapnik">
-<meta name="twitter:description" content="🐢 Coooooooooooooooding~">
+<meta name="twitter:title" content="光照模型[Lighting Model]">
+<meta name="twitter:description" content="光照模型  光照模型（illustration model）,也称明暗模型，用于计算物体某点处的光强（颜色值）。从算法理论基础而言，光照模型分为两种：一种是基于物理理论的，另一种是基于经验模型的。  基于物理理论的光照模型： 偏重于使用物理的度量和统计方法，效果非常真实，但是计算复杂，实现起来较困难。   基于实践总结的经验模型： 是对光照的一种模拟，通过实践总结出简化的方法，简化了真实的光照计算">
+<meta name="twitter:image" content="http://assets.processon.com/chart_image/61c497d40791290c9e03989d.png">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
   
@@ -149,60 +153,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-lighting-model" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/quick-cmbchina-activity/" class="archive-article-date">
-  	<time datetime="2019-10-03T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/quick-cmbchina-activity/">快人一步，招商掌上生活活动篇</a>
+    <h1 class="article-title" itemprop="name">
+      光照模型[Lighting Model]
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        
+        <a href="/2021/12/25/lighting-model/" class="archive-article-date">
+  	<time datetime="2021-12-25T07:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>光照模型</strong></p>
+<p><img src="http://assets.processon.com/chart_image/61c497d40791290c9e03989d.png" alt="光照"></p>
+<p><strong><em>光照模型（illustration model）</em></strong>,也称明暗模型，用于计算物体某点处的光强（颜色值）。从算法理论基础而言，光照模型分为两种：一种是基于物理理论的，另一种是基于经验模型的。</p>
+<ul>
+<li>基于物理理论的光照模型：<ul>
+<li>偏重于使用物理的度量和统计方法，效果非常真实，但是计算复杂，实现起来较困难。</li>
+</ul>
+</li>
+<li>基于实践总结的经验模型：<ul>
+<li>是对光照的一种模拟，通过实践总结出简化的方法，简化了真实的光照计算，并且能达到很不错的效果。</li>
+</ul>
+</li>
+</ul>
+<p><strong>局部光照模型和全局光照模型</strong></p>
+<ul>
+<li>局部光照模型<ul>
+<li>局部光照模型只关心直接光照部分，即直接从光源发出并照射到物体表面并反射至摄像头的光线。</li>
+<li>局部光照模型满足叠加原理，可以基本将光照分为四个部分：漫反射、高光反射、环境光和自发光</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>漫反射</em></strong></p>
+<p>在光照模型的定义中，当光线从光源照射到模型表面时，光线均匀被反射到各个方向，这种现象就是漫反射。在漫反射的过程中，光线发生了吸收和散射而因此改变了颜色和方向。</p>
+<p>漫反射效果与观察者位置无关，与光源位置有关。<br>$$<br>&lt;漫反射光颜色&gt;=&lt;入射光颜色&gt;\cdot&lt;表面颜色&gt;\cdot cos\theta\cos\theta=&lt;光线方向&gt;\cdot&lt;法线方向&gt;\C_{diffuse} =C_{light} \cdot C_{albedo}\cdot dot(normal,lightDirection)<br>$$<br><strong><em>高光反射</em></strong></p>
+<p>当光线到达物体表面并发生了反射，观察视线在反射光线的附近时，便能够观察到了高光反射。高光反射描述了光线与物体表面发生的反射（光强不变，方向改变），高光发射的发射率是根据一种菲涅尔效应的物理现象决定的。通常使用对应的反射贴图描述物体表面的反射率，并且使用光泽度（粗糙度、反光度）描述高光范围的大小。</p>
+<p><strong><em>环境光</em></strong></p>
+<p>光通常都不是来自同一个光源，而是来自于我们周围分散的很多光源，即使它们可能并不是那么显而易见。光的一个属性是，它可以向很多方向发散并反弹，从而能够到达不是非常直接临近的点。所以，光能够在其他的表面上发射，对一个物体产生间接的影响。考虑到这种情况的算法叫做<strong><em>全局照明(global illumination)</em></strong>算法，但是这种算法既开销高昂又极其复杂。因此我们使用一个简化的全局照明模型，即环境光。<br>$$<br>C_{ambient}=C_{albedo}*C_{light}<br>$$</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快人一步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计算机图形学#</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://krapnikkk.github.io/2021/12/25/lighting-model/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/12/26/model&material/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          计算机图形渲染流水线
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2021/12/18/MVP-MatrixModel Matrix/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVP矩阵-模型矩阵[Model Matrix]</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,8 +360,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

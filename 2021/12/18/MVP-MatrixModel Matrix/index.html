@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://krapnikkk.github.io">
-  <title>Archives: 2019/10 | Krapnik</title>
+  <title>MVP矩阵-模型矩阵[Model Matrix] | Krapnik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="🐢 Coooooooooooooooding~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Krapnik">
-<meta property="og:url" content="http://krapnikkk.github.io/archives/2019/10/index.html">
+  <meta name="description" content="齐次坐标（Homogeneous Coordinates） 在笛卡尔坐标系中，两条平行线是永不相交的，而在现实中，两条平行线（视觉上）是可能相关于一点的。在透视空间中，笛卡尔坐标就无法描述。 使用齐次坐标系可以解决这个问题，它的本质是使用N+1个数来表示N维空间中的点。 比如一个二维坐标（x，y），它的齐次坐标就是（x，y，w）。关系如下：$$X=x/w\Y=y/w$$在知道齐次坐标的情况下，很方">
+<meta name="keywords" content="计算机图形学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVP矩阵-模型矩阵[Model Matrix]">
+<meta property="og:url" content="http://krapnikkk.github.io/2021/12/18/MVP-MatrixModel Matrix/index.html">
 <meta property="og:site_name" content="Krapnik">
-<meta property="og:description" content="🐢 Coooooooooooooooding~">
+<meta property="og:description" content="齐次坐标（Homogeneous Coordinates） 在笛卡尔坐标系中，两条平行线是永不相交的，而在现实中，两条平行线（视觉上）是可能相关于一点的。在透视空间中，笛卡尔坐标就无法描述。 使用齐次坐标系可以解决这个问题，它的本质是使用N+1个数来表示N维空间中的点。 比如一个二维坐标（x，y），它的齐次坐标就是（x，y，w）。关系如下：$$X=x/w\Y=y/w$$在知道齐次坐标的情况下，很方">
 <meta property="og:locale" content="CH">
+<meta property="og:image" content="https://latex.codecogs.com/svg.image?T=\begin{pmatrix}&space;1&space;&&space;0&space;&&space;0&space;&&space;t_x\\&space;0&space;&&space;1&space;&&space;0&space;&&space;t_y&space;\\&space;0&space;&&space;0&space;&&space;1&space;&&space;t_z&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}">
+<meta property="og:image" content="https://latex.codecogs.com/svg.image?R{_x}(\phi)=\begin{pmatrix}&space;1&space;&&space;0&space;&&space;0&space;&&space;0\\&space;&space;0&space;&&space;cos\phi&space;&&space;-sin\phi&space;&&space;0&space;\\&space;0&space;&&space;sin\phi&space;&&space;cos\phi&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}">
+<meta property="og:image" content="https://latex.codecogs.com/svg.image?R{_y}(\phi)=\begin{pmatrix}&space;cos\phi&space;&&space;0&space;&&space;sin\phi&space;&&space;0\\&space;&space;0&space;&&space;1&space;&&space;0&space;&&space;0&space;\\&space;-sin\phi&space;&&space;0&space;&&space;cos\phi&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}">
+<meta property="og:image" content="https://latex.codecogs.com/svg.image?R{_y}(\phi)=\begin{pmatrix}&space;cos\phi&space;&&space;-sin\phi&space;&&space;0&space;&&space;0\\&space;&space;sin\phi&space;&&space;cos\phi&space;&&space;0&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;1&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}">
+<meta property="og:image" content="https://latex.codecogs.com/svg.image?S(s)=\begin{pmatrix}&space;s_x&space;&&space;0&space;&&space;0&space;&&space;0\\&space;&space;0&space;&&space;s_y&space;&&space;0&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;s_z&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}">
+<meta property="og:updated_time" content="2021-12-18T09:21:54.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Krapnik">
-<meta name="twitter:description" content="🐢 Coooooooooooooooding~">
+<meta name="twitter:title" content="MVP矩阵-模型矩阵[Model Matrix]">
+<meta name="twitter:description" content="齐次坐标（Homogeneous Coordinates） 在笛卡尔坐标系中，两条平行线是永不相交的，而在现实中，两条平行线（视觉上）是可能相关于一点的。在透视空间中，笛卡尔坐标就无法描述。 使用齐次坐标系可以解决这个问题，它的本质是使用N+1个数来表示N维空间中的点。 比如一个二维坐标（x，y），它的齐次坐标就是（x，y，w）。关系如下：$$X=x/w\Y=y/w$$在知道齐次坐标的情况下，很方">
+<meta name="twitter:image" content="https://latex.codecogs.com/svg.image?T=\begin{pmatrix}&space;1&space;&&space;0&space;&&space;0&space;&&space;t_x\\&space;0&space;&&space;1&space;&&space;0&space;&&space;t_y&space;\\&space;0&space;&&space;0&space;&&space;1&space;&&space;t_z&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
   
@@ -149,60 +157,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MVP-MatrixModel Matrix" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/quick-cmbchina-activity/" class="archive-article-date">
-  	<time datetime="2019-10-03T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/quick-cmbchina-activity/">快人一步，招商掌上生活活动篇</a>
+    <h1 class="article-title" itemprop="name">
+      MVP矩阵-模型矩阵[Model Matrix]
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        
+        <a href="/2021/12/18/MVP-MatrixModel Matrix/" class="archive-article-date">
+  	<time datetime="2021-12-18T08:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>齐次坐标（Homogeneous Coordinates）</strong></p>
+<p>在笛卡尔坐标系中，两条平行线是永不相交的，而在现实中，两条平行线（视觉上）是可能相关于一点的。在透视空间中，笛卡尔坐标就无法描述。</p>
+<p>使用齐次坐标系可以解决这个问题，<strong><em>它的本质是使用N+1个数来表示N维空间中的点</em></strong>。</p>
+<p>比如一个二维坐标（x，y），它的齐次坐标就是（x，y，w）。关系如下：<br>$$<br>X=x/w\<br>Y=y/w<br>$$<br>在知道齐次坐标的情况下，很方便地得到其笛卡尔坐标。之所以称为齐次坐标，是因为齐次坐标具有<strong><em>缩放不变性</em></strong>。比如（1，2，3），（2，4，6）和（1a，2a，3a）所表达的笛卡尔坐标是一样的。</p>
+<p><strong>模型矩阵（Model Matrix）</strong></p>
+<p><strong><em>位移变换矩阵</em></strong></p>
+<img src="https://latex.codecogs.com/svg.image?T=\begin{pmatrix}&space;1&space;&&space;0&space;&&space;0&space;&&space;t_x\\&space;0&space;&&space;1&space;&&space;0&space;&&space;t_y&space;\\&space;0&space;&&space;0&space;&&space;1&space;&&space;t_z&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}" title="T=\begin{pmatrix} 1 & 0 & 0 & t_x\\ 0 & 1 & 0 & t_y \\ 0 & 0 & 1 & t_z \\ 0 & 0 & 0 & 1\end{pmatrix}">
+
+<p><strong>* 旋转矩阵*</strong></p>
+<p>以x轴为轴心旋转</p>
+<img src="https://latex.codecogs.com/svg.image?R{_x}(\phi)=\begin{pmatrix}&space;1&space;&&space;0&space;&&space;0&space;&&space;0\\&space;&space;0&space;&&space;cos\phi&space;&&space;-sin\phi&space;&&space;0&space;\\&space;0&space;&&space;sin\phi&space;&&space;cos\phi&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}" title="R{_x}(\phi)=\begin{pmatrix} 1 & 0 & 0 & 0\\ 0 & cos\phi & -sin\phi & 0 \\ 0 & sin\phi & cos\phi & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}">
+
+<p>以y轴为轴心旋转</p>
+<img src="https://latex.codecogs.com/svg.image?R{_y}(\phi)=\begin{pmatrix}&space;cos\phi&space;&&space;0&space;&&space;sin\phi&space;&&space;0\\&space;&space;0&space;&&space;1&space;&&space;0&space;&&space;0&space;\\&space;-sin\phi&space;&&space;0&space;&&space;cos\phi&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}" title="R{_y}(\phi)=\begin{pmatrix} cos\phi & 0 & sin\phi & 0\\ 0 & 1 & 0 & 0 \\ -sin\phi & 0 & cos\phi & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}">
+
+<p>以z轴为轴心旋转</p>
+<img src="https://latex.codecogs.com/svg.image?R{_y}(\phi)=\begin{pmatrix}&space;cos\phi&space;&&space;-sin\phi&space;&&space;0&space;&&space;0\\&space;&space;sin\phi&space;&&space;cos\phi&space;&&space;0&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;1&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}" title="R{_y}(\phi)=\begin{pmatrix} cos\phi & -sin\phi & 0 & 0\\ sin\phi & cos\phi & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}">
+
+<p><strong>缩放矩阵</strong></p>
+<img src="https://latex.codecogs.com/svg.image?S(s)=\begin{pmatrix}&space;s_x&space;&&space;0&space;&&space;0&space;&&space;0\\&space;&space;0&space;&&space;s_y&space;&&space;0&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;s_z&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;0&space;&&space;1\end{pmatrix}" title="S(s)=\begin{pmatrix} s_x & 0 & 0 & 0\\ 0 & s_y & 0 & 0 \\ 0 & 0 & s_z & 0 \\ 0 & 0 & 0 & 1\end{pmatrix}">
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快人一步</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">计算机图形学</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://krapnikkk.github.io/2021/12/18/MVP-MatrixModel Matrix/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/12/25/lighting-model/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          光照模型[Lighting Model]
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2021/12/16/coordinate-systems/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">坐标系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,8 +360,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
