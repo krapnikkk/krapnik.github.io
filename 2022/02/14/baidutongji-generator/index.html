@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://krapnikkk.github.io">
-  <title>Archives: 2022 | Krapnik</title>
+  <title>Krapnik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="🐢 Coooooooooooooooding~">
-<meta property="og:type" content="website">
+  <meta name="description" content="title: 让百度统计插件支持谷歌浏览器插件和electrondate: 2022-02-14 22:28tags:    - 开发日志 缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Krapnik">
-<meta property="og:url" content="http://krapnikkk.github.io/archives/2022/index.html">
+<meta property="og:url" content="http://krapnikkk.github.io/2022/02/14/baidutongji-generator/index.html">
 <meta property="og:site_name" content="Krapnik">
-<meta property="og:description" content="🐢 Coooooooooooooooding~">
+<meta property="og:description" content="title: 让百度统计插件支持谷歌浏览器插件和electrondate: 2022-02-14 22:28tags:    - 开发日志 缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支">
 <meta property="og:locale" content="CH">
+<meta property="og:image" content="https://s2.loli.net/2022/02/14/nx59jt8UfdRkBXA.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/14/4RbNBPgyFOISo5t.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/15/ijb51WDXh3CoBvL.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/15/ujARkdX1sOrl2pW.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/15/KxPCIBg98DhMcwd.png">
+<meta property="og:image" content="https://s2.loli.net/2022/02/15/O93XKYZBJne56Mq.png">
+<meta property="og:updated_time" content="2022-02-15T04:04:23.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Krapnik">
-<meta name="twitter:description" content="🐢 Coooooooooooooooding~">
+<meta name="twitter:description" content="title: 让百度统计插件支持谷歌浏览器插件和electrondate: 2022-02-14 22:28tags:    - 开发日志 缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支">
+<meta name="twitter:image" content="https://s2.loli.net/2022/02/14/nx59jt8UfdRkBXA.png">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
   
@@ -149,140 +157,158 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-baidutongji-generator" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 让百度统计插件支持谷歌浏览器插件和electron<br>date: 2022-02-14 22:28<br>tags:<br>    - 开发日志</p>
+<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支持这两个平台。</p>
+<h3 id="加载插件"><a href="#加载插件" class="headerlink" title="加载插件"></a>加载插件</h3><p>参考官方的做法通过script标签加载插件远程路径，在file和chrome-extension协议下都是无法请求返回插件代码内容。通过http协议却能正确返回。</p>
+<p><img src="https://s2.loli.net/2022/02/14/nx59jt8UfdRkBXA.png" alt="image-20220214224833030"></p>
+<p>发现请求头是带Referer，但是file和chrome-extension协议下都是没有这个请求头的，发送请求后，服务器通过校验后304重定向返回文件内容。</p>
+<p>以上步骤，file和chrome-extension协议中加载插件都成问题了，那就直接把插件通过http下载到本地存为js文件再使用好了~</p>
+<h3 id="改造文件"><a href="#改造文件" class="headerlink" title="改造文件"></a>改造文件</h3><p>file和chrome-extension协议下，成功加载了本地js文件，但是在百度统计的管理后台发现根本没有统计数据上来。然后分析下在http协议时的请求内容，发现有两个<strong>hm.gif</strong>图片文件的请求记录。</p>
+<p>经过分析，可得出这两个文件请求其实就是一种统计日志的上报方式。但是在file协议下只有一条请求记录。</p>
+<p><img src="https://s2.loli.net/2022/02/14/4RbNBPgyFOISo5t.png" alt="http协议"></p>
+<p>再来一波分析，发现插件代码中有这个一个环境协议判断：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/https?:/.test(document.location.protocol) &amp;&amp; (this.b.u = a)</span><br></pre></td></tr></table></figure>
+
+<p>更改为不校验协议直接赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">true &amp;&amp; (this.b.u = a)</span><br></pre></td></tr></table></figure>
+
+<p>调整一波后，file协议下总算有两条<strong>hm.gif</strong>图片请求了，但是管理后台仍然没有记录。</p>
+<p>对比分析后发现，<strong>hm.gif</strong>图片请求的querystring中的u字段值使用的是当前的url。似乎file协议被过滤了，所以没有记录。</p>
+<p><img src="https://s2.loli.net/2022/02/15/ijb51WDXh3CoBvL.png" alt="image-20220215110803181"></p>
+<p>再来一波调整</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">document.location.hostname调整为新增网站时的网站域名</span><br><span class="line">document.location.host调整为新增网站时的网站域名</span><br><span class="line">document.location.href调整为url中最后的一个字符&quot;/&quot;后面的路径</span><br><span class="line">例：</span><br><span class="line">file:///D:/workspace/coding/baidutongji/test/file/index.html?source=file</span><br><span class="line">替换为</span><br><span class="line">https://a.com/index.html?source=file</span><br></pre></td></tr></table></figure>
+
+<p>调整过后，管理后台终于有对应的统计信息上报了，大功告成~</p>
+<p><img src="https://s2.loli.net/2022/02/15/ujARkdX1sOrl2pW.png" alt="image-20220215113148642"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>file协议可以正确无误地上报统计信息了，但是chrome-extension协议又出幺蛾子了。</p>
+<p><img src="https://s2.loli.net/2022/02/15/KxPCIBg98DhMcwd.png" alt="image-20220215113434464"></p>
+<p>原来百度统计插件需要加载远程另外的一个文件UrlChangeTracker.js，但浏览器的内容安全策略导致【CSP】该文件不能被加载。所以需要在谷歌浏览器插件中的manifest.json配置一下<strong>content_security_policy</strong>。配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;content_security_policy&quot;: &quot;script-src &apos;self&apos; https://hmcdn.baidu.com; object-src &apos;self&apos;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置好了，但是却又只有一条<strong>hm.gif</strong>图片请求，再来一波分析，发现插件中存在该代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mt.G.parse = function (a) &#123; return (new Function(&quot;return (&quot; + a + &quot;)&quot;))() &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这是eval的另外一种用法，谷歌浏览器插件限制这种字符串动态运行方式，仍然需要在manifest.json的<strong>content_security_policy</strong>参数增加配置，配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;content_security_policy&quot;: &quot;script-src &apos;self&apos; &apos;unsafe-eval&apos; https://hmcdn.baidu.com; object-src &apos;self&apos;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>调整过后，管理后台也有在chrome-extension协议环境下的统计信息上报了，大功告成x2~</p>
+<p><img src="https://s2.loli.net/2022/02/15/O93XKYZBJne56Mq.png" alt="image-20220215120336501"></p>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p>综合上述调整记录，整了个网页工具，辅助生成百度统计插件在file和chrome-extension等协议环境下【如：electron、chrome extension】能正常上报统计信息的本地插件文件。</p>
+<p><a href="https://krapnikkk.github.io/baidutongji-generator/index.html">点击跳转</a></p>
+<p>the end~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/14/baidutongji-generator/" class="archive-article-date">
-  	<time datetime="2022-02-14T14:27:38.128Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://krapnikkk.github.io/2022/02/14/baidutongji-generator/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/17/OpenGL's buffers/" class="archive-article-date">
-  	<time datetime="2022-01-17T15:42:39.993Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/01/17/OpenGL's buffers/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/16/Computer Working Principle/" class="archive-article-date">
-  	<time datetime="2022-01-16T07:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/16/Computer Working Principle/">计算机组成原理笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计算机组成原理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/09/lightcaster/" class="archive-article-date">
-  	<time datetime="2022-01-09T14:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/09/lightcaster/">光照类型[lightcaster]</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计算机图形学#</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -305,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
