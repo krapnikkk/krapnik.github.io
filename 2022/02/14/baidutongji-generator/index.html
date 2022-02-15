@@ -6,14 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://krapnikkk.github.io">
-  <title>Krapnik</title>
+  <title>让百度统计插件支持谷歌浏览器插件和electron | Krapnik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 让百度统计插件支持谷歌浏览器插件和electrondate: 2022-02-14 22:28tags:    - 开发日志 缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支">
+  <meta name="description" content="缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支持这两个平台。 加载插件参考官方的做法通过script标签加载插件远程路径，在file和chrome-extension协议下都是无法请求返">
+<meta name="keywords" content="开发日志">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Krapnik">
+<meta property="og:title" content="让百度统计插件支持谷歌浏览器插件和electron">
 <meta property="og:url" content="http://krapnikkk.github.io/2022/02/14/baidutongji-generator/index.html">
 <meta property="og:site_name" content="Krapnik">
-<meta property="og:description" content="title: 让百度统计插件支持谷歌浏览器插件和electrondate: 2022-02-14 22:28tags:    - 开发日志 缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支">
+<meta property="og:description" content="缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支持这两个平台。 加载插件参考官方的做法通过script标签加载插件远程路径，在file和chrome-extension协议下都是无法请求返">
 <meta property="og:locale" content="CH">
 <meta property="og:image" content="https://s2.loli.net/2022/02/14/nx59jt8UfdRkBXA.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/14/4RbNBPgyFOISo5t.png">
@@ -21,10 +22,10 @@
 <meta property="og:image" content="https://s2.loli.net/2022/02/15/ujARkdX1sOrl2pW.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/15/KxPCIBg98DhMcwd.png">
 <meta property="og:image" content="https://s2.loli.net/2022/02/15/O93XKYZBJne56Mq.png">
-<meta property="og:updated_time" content="2022-02-15T04:04:23.985Z">
+<meta property="og:updated_time" content="2022-02-15T06:15:23.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Krapnik">
-<meta name="twitter:description" content="title: 让百度统计插件支持谷歌浏览器插件和electrondate: 2022-02-14 22:28tags:    - 开发日志 缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支">
+<meta name="twitter:title" content="让百度统计插件支持谷歌浏览器插件和electron">
+<meta name="twitter:description" content="缘由日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支持这两个平台。 加载插件参考官方的做法通过script标签加载插件远程路径，在file和chrome-extension协议下都是无法请求返">
 <meta name="twitter:image" content="https://s2.loli.net/2022/02/14/nx59jt8UfdRkBXA.png">
   
     <link rel="alternative" href="/atom.xml" title="Krapnik" type="application/atom+xml">
@@ -160,10 +161,34 @@
             <article id="post-baidutongji-generator" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      让百度统计插件支持谷歌浏览器插件和electron
+    </h1>
+  
+
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        
+        <a href="/2022/02/14/baidutongji-generator/" class="archive-article-date">
+  	<time datetime="2022-02-14T14:28:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: 让百度统计插件支持谷歌浏览器插件和electron<br>date: 2022-02-14 22:28<br>tags:<br>    - 开发日志</p>
-<h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支持这两个平台。</p>
+        <h3 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h3><p>日常生活中开发了一些谷歌浏览器插件和桌面程序（electron）,但是没有很好的收集用户信息统计。之前网页一直都是使用百度统计进行统计的。便想着也整到里面去，却发现插件不支持file和chrome-extension协议环境。于是倒腾一下让百度统计插件也支持这两个平台。</p>
 <h3 id="加载插件"><a href="#加载插件" class="headerlink" title="加载插件"></a>加载插件</h3><p>参考官方的做法通过script标签加载插件远程路径，在file和chrome-extension协议下都是无法请求返回插件代码内容。通过http协议却能正确返回。</p>
 <p><img src="https://s2.loli.net/2022/02/14/nx59jt8UfdRkBXA.png" alt="image-20220214224833030"></p>
 <p>发现请求头是带Referer，但是file和chrome-extension协议下都是没有这个请求头的，发送请求后，服务器通过校验后304重定向返回文件内容。</p>
@@ -209,6 +234,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">开发日志</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -275,7 +311,7 @@
   
   
     <a href="/2022/01/17/OpenGL's buffers/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">OpenGL缓冲区[OpenGL&#39;s buffers]</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -407,19 +443,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">计算机图形学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计算机组成原理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color3">计算机图形学#</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">计算机图形学#</a>
+                <a href="javascript:void(0)" class="js-tag color2">计算机图形学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发日志</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
